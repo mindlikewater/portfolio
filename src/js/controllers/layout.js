@@ -1,25 +1,23 @@
-function LayoutController($location, $anchorScroll) {
+function LayoutController ($state) {
   let vm = this;
+  vm.home = home;
+  vm.about = about;
+  vm.portfolio = portfolio;
+  vm.resume = resume;
 
-  vm.showMenu = function() {
-    vm.menuStatus = true;
+  function home () {
+    $state.go('root.home')
   }
-
-  vm.hideMenu = function() {
-    vm.menuStatus = false;
+  function about () {
+    $state.go('root.about')
   }
-
-  function init() {
-    vm.menuStatus = false;
+  function portfolio () {
+    $state.go('root.portfolio')
   }
+  function resume () {
+    $state.go('root.resume')
+  }
+};
 
-  vm.scrollTo = function(id) {
-       $location.hash(id);
-       $anchorScroll();
-    }
-
-  init();
-}
-
-LayoutController.$inject = ["$location", "$anchorScroll"];
-export { LayoutController }
+LayoutController.$inject = ["$state"];
+export { LayoutController };
