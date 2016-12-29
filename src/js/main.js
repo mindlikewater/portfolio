@@ -11,4 +11,6 @@ angular
   .module('app', ['ui.router'])
   .config(routerConfig)
   .controller('LayoutController', LayoutController)
+  .controller('AboutController', AboutController)
   .controller("PortfolioController", PortfolioController)
+  .controller('ResumeController', ResumeController)

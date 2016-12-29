@@ -3,7 +3,7 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
   .state("root", {
     abstract: true,
     templateUrl: "templates/layout.tpl.html",
-    controller: "LayoutController as vm"
+    controller: "LayoutController as layout"
   })
   .state("root.home", {
     url: "/",
@@ -11,15 +11,18 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
   })
   .state("root.about", {
     url: "/about",
-    templateUrl: "templates/about.tpl.html"
+    templateUrl: "templates/about.tpl.html",
+    controller: "AboutController as about"
   })
-  .state("layout.portfolio", {
+  .state("root.portfolio", {
     url: "/porfolio",
-    templateUrl: "templates/portfolio.tpl.html"
+    templateUrl: "templates/portfolio.tpl.html",
+    controller: "PortfolioController as portfolio"
   })
-  .state("layout.resume", {
+  .state("root.resume", {
     url: "/resume",
-    templateUrl: "templates/resume.tpl.html"
+    templateUrl: "templates/resume.tpl.html",
+    controller: "ResumeController as resume"
   });
 
   $urlRouterProvider.otherwise('/');
