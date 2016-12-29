@@ -1,0 +1,65 @@
+<div class="layout-container">
+  <nav class="navbar">
+    <div class="navbar-left navbar-item">
+      <a href="#/home">
+        <img class="navbar-logo" src="http://lightquick.co.uk/modules/mod_orrery/Resources/innerFramesAndGlass.png"/>
+      </a>
+    </div>
+    <div class="nav-center">
+     <a class="nav-item" href="https://www.github.com/mindlikewater/">
+       <span class="icon">
+         <i class="fa fa-github"></i>
+       </span>
+     </a>
+     <a class="nav-item" href="mailto:mindlikewater@gmail.com">
+       <span class="icon">
+         <i class="fa fa-envelope-o"></i>
+       </span>
+     </a>
+ </div>
+    <ul class="navbar-menu navbar-right">
+      <li>
+        <a class="nav-item" href="/#/">HOME</a>
+      </li>
+      <li>
+        <a class="nav-item" ng-click"vm.scrollTo('about')">ABOUT</a>
+      </li>
+      <li>
+        <a class="nav-item" ng-click"vm.scrollTo('portfolio')">PORTFOLIO</a>
+      </li>
+      <li>
+        <a class="nav-item" ng-click"vm.scrollTo('resume')">RESUME</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="menu" ng-mouseleave="vm.hideMenu()" ng-show="vm.menuStatus">
+      <aside class="menu">
+        <p class="menu-label is-large">
+          Navigation
+        </p>
+        <ul class="menu-list">
+          <li><a href="/#/Home">Home</a></li>
+          <li><a ng-click="vm.scrollTo('about')">About</a></li>
+          <li><a ng-click="vm.scrollTo('portfolio')">Portfolio</a></li>
+        </ul>
+        <p class="menu-label">
+          Contact Me
+        </p>
+        <ul class="menu-list">
+          <li>
+            <ul>
+              <li>
+                <a class="is-paddingless" href="http://www.github.com/mindlikewater">
+                  Github
+                </a>
+              </li>
+              <li>
+                <a class="is-paddingless" href="mailto:mindlikewater@gmail.com">
+                  mindlikewater@gmail.com
+                </a>
+              </li>
+            </ul>
+          </li>
+      </aside>
+  </div>
+</div>
