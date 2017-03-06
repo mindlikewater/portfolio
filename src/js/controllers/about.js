@@ -1,5 +1,0 @@
-function AboutController () {
-
-}
-
-export { AboutController };

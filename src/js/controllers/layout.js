@@ -1,23 +1,26 @@
-function LayoutController ($state) {
+function LayoutController ($location, $anchorScroll, myProjects) {
+
   let vm = this;
   vm.home = home;
-  vm.about = about;
-  vm.portfolio = portfolio;
-  vm.resume = resume;
+  vm.list = myProjects;
+  vm.images = [];
 
-  function home () {
-    $state.go('root.home')
+  vm.scrollTo = scrollTo;
+  console.log(vm.scrollTo);
+
+  function scrollTo(loc) {
+    console.log("calling scrollTo function");
+    $location.has(loc);
+      $anchorScroll.yOffset = 90;
+      $anchorScroll();
   }
-  function about () {
-    $state.go('root.about')
-  }
-  function portfolio () {
-    $state.go('root.portfolio')
-  }
-  function resume () {
-    $state.go('root.resume')
-  }
+
+  vm.images = vm.list.map( function(proj) {
+    return proj.images;
+  });
+  console.log(vm.images);
+
 };
 
-LayoutController.$inject = ["$state"];
+LayoutController.$inject = ['$location', '$anchorScroll', 'myProjects'];
 export { LayoutController };
