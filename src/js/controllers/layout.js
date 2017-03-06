@@ -1,8 +1,7 @@
-function LayoutController ($location, $anchorScroll, myProjects) {
-
+function LayoutController ($location, $anchorScroll, PROJECTS) {
   let vm = this;
   vm.home = home;
-  vm.list = myProjects;
+  vm.list = PROJECTS;
   vm.images = [];
 
   vm.scrollTo = scrollTo;
@@ -22,5 +21,5 @@ function LayoutController ($location, $anchorScroll, myProjects) {
 
 };
 
-LayoutController.$inject = ['$location', '$anchorScroll', 'myProjects'];
+LayoutController.$inject = ['$location', '$anchorScroll', 'PROJECTS'];
 export { LayoutController };
