@@ -1,4 +1,4 @@
-function routerConfig ($stateProvider, $urlRouterProvider) {
+function routerConfig ($stateProvider, $urlRouterProvider, $qProvider) {
   $stateProvider
   .state("root", {
     abstract: true,
@@ -11,22 +11,20 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
   })
   .state("root.about", {
     url: "/about",
-    templateUrl: "templates/about.tpl.html",
-    controller: "AboutController as about"
+    templateUrl: "templates/about.tpl.html"
   })
-  .state("root.portfolio", {
-    url: "/porfolio",
-    templateUrl: "templates/portfolio.tpl.html",
-    controller: "PortfolioController as portfolio"
-  })
-  .state("root.resume", {
-    url: "/resume",
-    templateUrl: "templates/resume.tpl.html",
-    controller: "ResumeController as resume"
-  });
+  // .state("root.portfolio", {
+  //   url: "/porfolio",
+  //   templateUrl: "templates/portfolio.tpl.html"
+  // })
+  // .state("root.resume", {
+  //   url: "/resume",
+  //   templateUrl: "templates/resume.tpl.html"
+  // });
 
   $urlRouterProvider.otherwise('/');
+  $qProvider.errorOnUnhandledRejections(false);
 };
 
-routerConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
+routerConfig.$inject = ['$stateProvider', '$urlRouterProvider', '$qProvider'];
 export { routerConfig };
