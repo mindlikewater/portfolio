@@ -1,16 +1,14 @@
 import angular from 'angular';
 import 'angular-ui-router';
 
-import { routerConfig } from "./routes";
+import { routerConfig } from './routes';
 import { LayoutController } from './controllers/layout';
-import { AboutController } from './controllers/about';
-import { PortfolioController } from "./controllers/portfolio";
-import { ResumeController } from './controllers/resume';
+import { PortfolioController } from './controllers/portfolio';
+import { myProjects } from './projects';
 
 angular
   .module('app', ['ui.router'])
   .config(routerConfig)
   .controller('LayoutController', LayoutController)
-  .controller('AboutController', AboutController)
   .controller("PortfolioController", PortfolioController)
-  .controller('ResumeController', ResumeController)
+  .constant('myProjects', myProjects)
