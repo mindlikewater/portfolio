@@ -1,4 +1,4 @@
-function routerConfig ($stateProvider, $urlRouterProvider, $qProvider) {
+function routerConfig ($stateProvider, $urlRouterProvider) {
   $stateProvider
   .state("root", {
     abstract: true,
@@ -23,8 +23,7 @@ function routerConfig ($stateProvider, $urlRouterProvider, $qProvider) {
   // });
 
   $urlRouterProvider.otherwise('/');
-  $qProvider.errorOnUnhandledRejections(false);
 };
 
-routerConfig.$inject = ['$stateProvider', '$urlRouterProvider', '$qProvider'];
+routerConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
 export { routerConfig };
